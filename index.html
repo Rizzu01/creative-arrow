@@ -565,6 +565,55 @@
 
 
     <!-- JavaScript Libraries -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            // Get the element to animate
+            var typedText = document.querySelector('.typed-text');
+            // Split the text content into an array of phrases
+            var phrases = typedText.textContent.split(', ');
+
+            // Clear the text content of the element
+            typedText.textContent = '';
+
+            // Initialize variables
+            var index = 0;
+            var charIndex = 0;
+            var typingDelay = 100; // Delay between typing characters (in milliseconds)
+            var phraseDelay = 2000; // Delay between phrases (in milliseconds)
+
+            // Start typing function
+            function type() {
+                if (index < phrases.length) {
+                    if (charIndex < phrases[index].length) {
+                        typedText.textContent += phrases[index].charAt(charIndex);
+                        charIndex++;
+                        setTimeout(type, typingDelay);
+                    } else {
+                        setTimeout(erase, phraseDelay);
+                    }
+                } else {
+                    index = 0; // Reset index to loop indefinitely
+                    setTimeout(type, typingDelay);
+                }
+            }
+
+            // Erase function
+            function erase() {
+                if (charIndex > 0) {
+                    typedText.textContent = phrases[index].substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(erase, typingDelay / 2);
+                } else {
+                    index++;
+                    setTimeout(type, typingDelay);
+                }
+            }
+
+            // Start the typing animation
+            type();
+        });
+    </script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/typed/typed.min.js"></script>
