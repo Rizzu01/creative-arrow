@@ -608,7 +608,7 @@ pre code {
 }
 
 @media (min-width: 576px) {
-  .container, .container-sm {
+  .container, .container-sm {17
     max-width: 540px;
   }
 }
@@ -9790,9 +9790,9 @@ h6,
   }
 }
 
-.navbar-light {
+/* .navbar-light {
   display: none;
-}
+} */
 
 .navbar-light .navbar-nav .nav-link {
   padding: 25px 10px;
