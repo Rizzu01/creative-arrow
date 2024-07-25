@@ -9984,7 +9984,8 @@ h6,
 }
 
 
-#home{
+#home {
   background: url(../img/v915-wit-005-k.jpg);
   background-size: cover;
+  padding-top: 150px !important;
 }
