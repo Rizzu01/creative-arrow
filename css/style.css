@@ -9990,8 +9990,14 @@ h6,
   padding-top: 150px !important;
 }
 
-#about{
+.about-p{
+  font-size: 30px;
+  counter-reset: #000;
+  letter-spacing: 10px;
+}
+
+/* #about{
   background: url(../img/184749.jpg);
   background-size: cover;
 
-}
+} */
