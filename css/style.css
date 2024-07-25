@@ -9992,8 +9992,8 @@ h6,
 
 .about-p{
   font-size: 30px;
-  counter-reset: #000;
-  letter-spacing: 10px;
+  color: #000;
+ 
 }
 
 /* #about{
