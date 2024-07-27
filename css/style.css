@@ -10001,3 +10001,94 @@ h6,
   background-size: cover;
 
 } */
+
+.grid-container {
+  height: calc(100vh - 40px);
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+padding-bottom: 20px;
+
+}
+
+.card {
+width: 300px; 
+height: 300px; 
+perspective: 1000px;
+}
+/* Responsive Rules */
+@media (max-width: 959px) {
+.grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media (max-width: 640px) {
+.grid {
+  grid-template-columns: 1fr;
+}
+}
+.square {
+width: 100%;
+height: 100%;
+background-position: center;
+background-size: 150%;
+transition: transform 1s, background-size 0.5s, box-shadow 0.5s, background-position 0.5s;
+transform-style: preserve-3d;
+transform-origin: center;
+filter: blur(0px);
+overflow: hidden;
+border-radius: 25px; 
+}
+
+.square:hover {
+background-size: 200%; 
+}
+
+.square p {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: white;
+font-size: 16px; 
+transition: opacity 0.25s ease-in-out;
+border-radius: 25px; 
+}
+
+.hidden {
+opacity: 0;
+visibility: hidden;
+}
+
+.square:before {
+content: "";
+position: absolute;
+background: rgba(0, 0, 0, 0.3);
+width: 100%;
+height: 100%;
+}
+
+.square:after {
+content: "";
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0%;
+left: 0%;
+border: 0px solid;
+transition: 0.5s all 0.5s;
+}
+
+.square:hover:after {
+width: 90%;
+height: 90%;
+top: 5%;
+left: 5%;
+border: 2.5px solid darkgrey; 
+border-radius: 25px; 
+transition: 1s width, 1s height, 1s top, 1s left, 0.1s border 0s;
+}
